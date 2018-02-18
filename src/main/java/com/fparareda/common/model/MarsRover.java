@@ -12,7 +12,6 @@ import javax.validation.constraints.NotNull;
 @Getter
 @Table(name="mars_rover")
 @NoArgsConstructor
-@AllArgsConstructor
 public class MarsRover {
 
     @Id
@@ -28,6 +27,12 @@ public class MarsRover {
     @Column(nullable = false)
     @NotNull(message = "Charging can not be null!")
     private Boolean charging;
+
+    public MarsRover(Long id, Position position, Boolean charging) {
+        this.id = id;
+        this.position = position;
+        this.charging = charging;
+    }
 
     public void move(Position position) {
         this.position = position;

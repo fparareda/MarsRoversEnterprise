@@ -12,7 +12,6 @@ import java.util.Date;
 
 @Entity
 @Getter
-@AllArgsConstructor
 @Table(name = "message")
 public class Message {
 
@@ -35,6 +34,13 @@ public class Message {
 
     public Message() {
         this.date = new Date();
+    }
+
+    public Message(Long id, MarsRover marsRover, Date date, String message) {
+        this.id = id;
+        this.marsRover = marsRover;
+        this.date = date;
+        this.message = message;
     }
 
     public void assignMarsRover(MarsRover marsRover) {

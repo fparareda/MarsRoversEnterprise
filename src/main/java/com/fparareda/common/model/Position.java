@@ -14,7 +14,6 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name="position")
 public class Position {
 
@@ -28,4 +27,10 @@ public class Position {
 
     @NotNull(message = "The longitude can not be null!")
     private float longitude;
+
+    public Position(Long id, float latitude, float longitude) {
+        this.id = id;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 }
